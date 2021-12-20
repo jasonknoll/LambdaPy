@@ -5,7 +5,6 @@ module AST
 where
 
 
-
 data Defs
   = TermDefs
   | Anns        -- Annotations
