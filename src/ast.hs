@@ -25,6 +25,7 @@ data Type
   | Func    Type Type
   | Pair    Type Type
   | Sum     Type Type
+  | Forall  String Type
 
 
 data Term

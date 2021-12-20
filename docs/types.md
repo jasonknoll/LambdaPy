@@ -25,6 +25,8 @@
 ## List
 
 ### Interface
+- `[]                   : []`
+- `[a]                  : [a]`
 
 ## Linear
 
@@ -47,8 +49,10 @@
 
 ## WindowArea
 
-- `buildWindowArea : IO (Linear Window)`
-- `setDim : Linear WindowArea -> (Int, Int) -> IO (Linear Win)
+- `buildWindowArea : IO (Linear WindowArea)`
+- `setDim : Linear WindowArea -> (Int, Int) -> IO (Linear WindowArea)`
+- `getDim : Linear WindowArea -> IO (Linear WindowArea, (Int, Int))`
+- `addWindowArea : Linear WindowArea -> (String, Window Area) -> IO (Linear WindowArea)`
 
 ## WindowButton
 
