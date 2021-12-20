@@ -8,9 +8,15 @@
 
 ### Interface
 
+- `and`
+- `or`
+- `not`
+- `-- More logical operators?` 
+
 ## Int
 
 ### Interface
+- `Succ                 : Int -> Succ Int`
 
 ## Char
 
@@ -23,14 +29,27 @@
 ## Linear
 
 ### Interface
-- `lin                  : a -> Linear a`
-- ``
+- `linear               : a -> Linear a`
+- 
+
 
 ## Window
 
 ### Interface
+- `buildWindow : IO (Linear Window)`
+- `setDim : Linear Window -> (Int, Int) -> IO (Linear Window)`
+- `getDim : Linear Window -> IO (Linear Window, (Int, Int))`
+- `addWindowArea : Linear Window -> (String, WindowArea) -> IO (Linear Window)`
+- `getWindowArea : Linear Window -> String -> IO (Linear Window, Linear WindowArea)`
+- `showWindowArea : Linear Window -> String -> IO (Linear Window)`
+- `hideWindowArea : Linear Window -> String -> IO (Linear Window)`
 
-- `buildWindow          : IO (Linear Window)`
-- `setDim               : Linear Window -> (Int, Int) -> IO (Linear Window)`
-- `addWindowArea        : Linear Window -> WindowArea -> IO (Linear Window)`
-- `getWindowAreas       : Linear Window -> IO (Linear Window, [Linear WindowArea])`
+
+## WindowArea
+
+- `buildWindowArea : IO (Linear Window)`
+- `setDim : Linear WindowArea -> (Int, Int) -> IO (Linear Win)
+
+## WindowButton
+
+## WindowTextField
