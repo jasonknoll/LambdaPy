@@ -12,11 +12,19 @@
 - `or`
 - `not`
 - `-- More logical operators?` 
+- 
+- `showsPrec : Int -> Bool -> ShowS` 
+- `showBool : Bool -> String`
+- `showBoolList : [Bool] -> ShowS`
 
-## Int
+## PyInt
 
 ### Interface
 - `Succ : Int -> Succ Int`
+
+- `showsPrec : Int -> PyInt -> ShowS` 
+- `showInt : PyInt -> String`
+- `showIntList : [PyInt] -> ShowS`
 
 ## Char
 
