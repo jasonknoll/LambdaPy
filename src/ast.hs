@@ -39,6 +39,8 @@ data Term
   | PairVal Term Term
 
   | Lambda  [(String, Maybe Type)] Term
+  | App     Term Term
+  | LApp    Term Term
   | Let     Pattern Term Term
   | Case    Term [(Pattern, Term)]
 
@@ -69,7 +71,7 @@ wrapFunc x            = show x
 
 instance Show Term where
   show (Var s)     = s
-  show UnitVal     = "unit"
+  show UnitVal     = "unit" 
   show Tru         = "true" 
   show Fls         = "false"
   show (NumVal n)  = show n
@@ -82,10 +84,15 @@ instance Show Term where
       showPairs [(s, mt)] = s ++ (case mt of Nothing -> ""; Just t -> " : " ++ show t)
       showPairs ((s, mt):ps) = showPairs [(s, mt)] ++ ", " ++ showPairs ps
 
+  show (App t1 t2) = wrapLambda t1 ++ " " ++ show t2
+
   show (Case t patterns) = "case " ++ show t ++ " of " ++ showPatterns patterns
     where
       showPatterns [(p, e)] = show p ++ " -> " ++ show e
       showPatterns ((p, e):ps) = showPatterns [(p, e)] ++ "; " ++ showPatterns ps
+
+wrapLambda :: Term -> String
+wrapLambda l@(Lambda _ _) = "(" ++ show l ++ ")"
 
 
 
