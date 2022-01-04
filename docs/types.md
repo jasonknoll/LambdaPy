@@ -12,19 +12,12 @@ I AM INCORRECT HERE - Jason
 - `or`
 - `not`
 - `-- More logical operators?` 
-- 
-- `showsPrec : Int -> Bool -> ShowS` 
-- `showBool : Bool -> String`
-- `showBoolList : [Bool] -> ShowS`
 
 ## PyInt
 
 ### Interface
 - `Succ : Int -> Succ Int`
 
-- `showsPrec : Int -> PyInt -> ShowS` 
-- `showInt : PyInt -> String`
-- `showIntList : [PyInt] -> ShowS`
 
 ## Char
 
@@ -92,3 +85,7 @@ Drawing Functions
 ## WindowTextField
 - `buildTextField : IO (Linear TextField)`
 - `setText : WindowTextField -> String -> IO (Linear WindowTextField)`
+
+## Show
+- `show : Type -> String`
+- `show : Term -> String`
